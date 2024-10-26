@@ -13,11 +13,11 @@ Ce projet est une application Web CRUD simple utilisant Spring Boot et Thymeleaf
 1. **Configurer la base de données** : 
    - Créez une base de données MySQL nommée \`thymeleaf\`.
    - Mettez à jour les informations de connexion dans le fichier \`application.properties\` :
-     \`\`\`properties
+     \`\`properties
      spring.datasource.url = jdbc:mysql://localhost:3306/thymeleaf
      spring.datasource.username = <votre_nom_d_utilisateur>
      spring.datasource.password = <votre_mot_de_passe>
-     \`\`\`
+     \`\`
 
 ## Lancer l'application
 
