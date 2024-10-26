@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style personnalisé pour le conteneur de la liste des utilisateurs */
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        /* Style personnalisé pour le message d'absence d'utilisateurs */
+        .no-users {
+            color: #6c757d;
+            font-style: italic;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="container">
+    <h2>User List</h2>
+    <div th:switch="${users}">
+        <h3 th:case="null">No users yet!</h3>
+        <div th:case="*">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${user.id})}" class="btn btn-warning">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${user.id})}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <a href="/signup" class="btn btn-success">Add a new user</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
