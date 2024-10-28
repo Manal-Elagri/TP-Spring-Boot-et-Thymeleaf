@@ -2,6 +2,10 @@
 
 Ce projet est une application Web CRUD simple utilisant Spring Boot et Thymeleaf. Il permet de gérer des entités utilisateur en utilisant une base de données MySQL.
 
+## Video l'exécution
+
+https://github.com/user-attachments/assets/0130fd33-dcfc-482e-9818-ffcf1271daa3
+
 ## Prérequis
 
 - Java 8 ou version ultérieure
